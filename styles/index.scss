@@ -1,0 +1,40 @@
+$cores:(
+    verde:green,
+    vermelho:red,
+    amarelo:rgb(229, 229, 47),
+);
+
+@mixin button($color){
+    border-radius: 7px;
+    margin: 10px;
+    width: 150px;
+    color:white;
+    color:$color;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    transition: 0.5s;
+   
+    &:hover{
+        transform: scale(1.1);
+        transition: 0.5s;
+    }
+}
+
+main{
+    justify-content: center;
+    display: flex;
+}
+
+.sucess{
+    background:map-get($cores,verde);
+    @include button(white);
+}
+
+.err{
+    background:map-get($cores,vermelho);
+    @include button(white);
+}
+
+.alert{
+    background:map-get($cores,amarelo);
+    @include button(black);
+}
